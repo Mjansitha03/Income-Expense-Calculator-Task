@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Main heading of the project -->
+      <h1>Income Expense Calculator</h1>
+
+      <!-- Section to display total income, expense, and balance -->
+      <div class="total-amount">
+        <div>
+          <p>Total Income</p>
+          <h2 id="income-amount">₹0</h2>
+        </div>
+        <div>
+          <p>Total Expense</p>
+          <h2 id="expense-amount">₹0</h2>
+        </div>
+        <div>
+          <p>Net Balance</p>
+          <h2 id="net-amount">₹0</h2>
+        </div>
+      </div>
+
+      <!-- Form to add new income or expense entries -->
+      <form id="form">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          required
+          placeholder="Enter Description"
+        />
+        <br />
+
+        <label for="amount">Amount</label>
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          required
+          placeholder="Enter Amount"
+        />
+        <br />
+
+        <label for="type">Type</label>
+        <div class="dropdown">
+          <select name="type" id="type">
+            <option value="income">Income</option>
+            <hr />
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+
+        <!-- Message for validation or alerts -->
+        <p id="message" class="message"></p>
+
+        <!-- Buttons to add or reset form inputs -->
+        <div class="button-section">
+          <button type="submit">Add</button>
+          <button type="reset" id="reset-btn">Reset</button>
+        </div>
+      </form>
+
+      <!-- Filter section to view All, Income, or Expense records -->
+      <div class="filter">
+        <input
+          type="radio"
+          name="history"
+          id="all-history-radio"
+          value="all"
+          checked
+        />
+        <label for="all-history-radio">All</label>
+
+        <input
+          type="radio"
+          name="history"
+          id="income-history-radio"
+          value="income"
+        />
+        <label for="income-history-radio">Income</label>
+
+        <input
+          type="radio"
+          name="history"
+          id="expense-history-radio"
+          value="expense"
+        />
+        <label for="expense-history-radio">Expense</label>
+      </div>
+
+      <!-- History section where all records will appear dynamically -->
+      <div class="history">
+        <div id="all-history-section"></div>
+        <div id="income-history-section"></div>
+        <div id="expense-history-section"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
